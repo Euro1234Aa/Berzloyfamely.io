@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background: url('1562087703_tumblr_orxwlzcqHb1v1awdio1_1280.gif') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+            overflow: hidden;
+        }
+        header {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: rgb(255, 255, 255);
+            padding: 1rem;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+        nav {
+            background-color: rgba(255, 0, 0, 0.8);
+            overflow: hidden;
+            position: relative;
+            z-index: 2;
+        }
+        nav a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        main {
+            padding: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+        footer {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            z-index: 2;
+        }
+        .smoke {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+        .smoke div {
+            position: absolute;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0));
+            width: 200px;
+            height: 200px;
+            animation: drift 10s infinite;
+        }
+        @keyframes drift {
+            0% {
+                transform: translate(0, 0) scale(1);
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
+            100% {
+                transform: translate(100px, -100px) scale(1.5);
+                opacity: 0;
+            }
+        }
+        .animated-png {
+            position: absolute;
+            top: 300%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: opacity 2s ease-in-out, filter 0.3s ease-in-out;
+        }
+        .animated-png.appear {
+            opacity: 1;
+        }
+        .animated-png:hover {
+            filter: drop-shadow(0 0 20px #fff);
+        }
+        .center-text {
+            position: fixed;
+            bottom: 10%;
+            left: 50%;
+            transform: translate(-50%, 0);
+            text-align: center;
+            font-size: 2rem;
+            z-index: 3;
+        }
+    </style>
+</head>
+<body>
+    <div class="smoke">
+        <div style="top: 10%; left: 20%; animation-delay: 0s;"></div>
+        <div style="top: 50%; left: 40%; animation-delay: 2s;"></div>
+        <div style="top: 30%; left: 70%; animation-delay: 4s;"></div>
+        <div style="top: 80%; left: 10%; animation-delay: 6s;"></div>
+    </div>
+    <header>
+        <h1>Welcome to Website BERZLOY</h1>
+    </header>
+    <nav>
+        <a href="#" onclick="location.reload(); return false;">Главная</a>
+        <a href="#" onclick="window.location.href='http://127.0.0.1:5500/baza2.html'; return false;">О нас</a>
+        <a href="#" onclick="window.location.href='https://vk.com/chechen131'; return false;">Контакты</a>
+    </nav>
+    <main>
+        <img src="WOLF BERZLOY.png" alt="Wolf" class="animated-png" id="animatedImage" onclick="window.location.href='https://docs.google.com/forms/d/e/1FAIpQLScSxCBSpfFr3XC2ruDjpkS2fxwyWxz5lSdltWY7KMs3AIH0Ew/viewform?fbzx=2917958057927733022';">
+        <div class="center-text">
+            <h2>About Us</h2>
+            <p>We are a community united by shared interests. We are those who provide help and never abandon our own in times of need. Want to join us? Then click on the LOGO!</p>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2025 All rights reserved.</p>
+    </footer>
+    <script>
+        window.onload = () => {
+            const animatedImage = document.getElementById('animatedImage');
+            setTimeout(() => animatedImage.classList.add('appear'), 500);
+        };
+    </script>
+</body>
+</html>
